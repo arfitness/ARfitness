@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AR Fitness | Personal Trainers Vancouver</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--black:#0a0a0a;--orange:#E8510A;--orange-dark:#c44108;--white:#ffffff;--text-mid:#888;--text-light:#bbb;}
+body{font-family:'Barlow',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:72px;background:rgba(10,10,10,0.95);border-bottom:1px solid rgba(255,255,255,0.06);}
+.nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;letter-spacing:2px;}
+.nav-logo span{color:var(--orange);}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);transition:color .2s;}
+.nav-links a:hover{color:var(--white);}
+.nav-cta{background:var(--orange);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:10px 24px;border:none;cursor:pointer;transition:background .2s;}
+.nav-cta:hover{background:var(--orange-dark);}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:120px 48px 80px;position:relative;background:linear-gradient(to right,rgba(10,10,10,0.92) 50%,rgba(10,10,10,0.4) 100%),url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80') center/cover no-repeat;}
+.hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--orange);margin-bottom:20px;}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(64px,9vw,120px);font-weight:900;line-height:.9;letter-spacing:-1px;text-transform:uppercase;max-width:900px;margin-bottom:28px;}
+.hero h1 em{font-style:normal;color:var(--orange);}
+.hero-sub{font-size:17px;color:var(--text-light);max-width:480px;line-height:1.7;margin-bottom:44px;}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-primary{background:var(--orange);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:16px 36px;border:none;cursor:pointer;transition:background .2s;display:inline-block;}
+.btn-primary:hover{background:var(--orange-dark);}
+.btn-ghost{border:1px solid rgba(255,255,255,0.25);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:15px 36px;cursor:pointer;transition:all .2s;display:inline-block;background:transparent;}
+.btn-ghost:hover{border-color:var(--white);}
+.hero-stats{display:flex;gap:48px;margin-top:60px;padding-top:48px;border-top:1px solid rgba(255,255,255,0.1);flex-wrap:wrap;}
+.hero-stat-num{font-family:'Barlow Condensed',sans-serif;font-size:42px;font-weight:900;color:var(--orange);}
+.hero-stat-label{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text-mid);margin-top:2px;}
+section{padding:100px 48px;}
+.section-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--orange);margin-bottom:16px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(40px,5vw,68px);font-weight:900;text-transform:uppercase;line-height:.95;letter-spacing:-0.5px;}
+.section-title em{font-style:normal;color:var(--orange);}
+.why{background:var(--black);}
+.why-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1200px;margin:0 auto;}
+.why-pillars{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.07);margin-top:48px;}
+.pillar{background:var(--black);padding:28px 24px;border:1px solid rgba(255,255,255,0.07);}
+.pillar-title{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+.pillar-text{font-size:13px;color:var(--text-mid);line-height:1.65;}
+.why-image img{width:100%;height:560px;object-fit:cover;display:block;}
+.why-image-badge{background:var(--orange);padding:20px 24px;display:inline-block;margin-top:16px;}
+.why-image-badge-num{font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:900;line-height:1;}
+.why-image-badge-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;}
+.online-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,81,10,0.12);border:1px solid rgba(232,81,10,0.25);padding:8px 16px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-top:16px;}
+.services{background:#111;}
+.services-inner{max-width:1200px;margin:0 auto;}
+.services-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:60px;flex-wrap:wrap;gap:24px;}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.07);}
+.service-card{background:#111;padding:40px 32px;border-bottom:3px solid transparent;transition:all .25s;}
+.service-card:hover{background:#161616;border-bottom-color:var(--orange);}
+.service-num{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--orange);letter-spacing:2px;margin-bottom:20px;}
+.service-name{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;text-transform:uppercase;margin-bottom:12px;}
+.service-desc{font-size:14px;color:var(--text-mid);line-height:1.7;}
+.service-link{display:inline-block;margin-top:20px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);}
+.trainers{background:var(--black);}
+.trainers-inner{max-width:1200px;margin:0 auto;}
+.trainers-header{margin-bottom:60px;}
+.trainers-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:800px;}
+.trainer-card{background:#111;border:1px solid rgba(255,255,255,0.06);overflow:hidden;}
+.trainer-img{width:100%;height:480px;object-fit:cover;object-position:top;display:block;filter:grayscale(20%);transition:filter .3s;}
+.trainer-card:hover .trainer-img{filter:grayscale(0%);}
+.trainer-info{padding:24px;}
+.trainer-name{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;text-transform:uppercase;}
+.trainer-title{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-top:4px;}
+.trainer-bio{font-size:13px;color:var(--text-mid);line-height:1.7;margin-top:12px;}
+.trainer-specs{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;}
+.trainer-spec{font-size:11px;color:var(--text-mid);background:rgba(255,255,255,0.05);padding:4px 10px;}
+.trainer-cta{display:block;margin-top:16px;background:transparent;border:1px solid rgba(255,255,255,0.15);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:10px;text-align:center;cursor:pointer;width:100%;transition:all .2s;}
+.trainer-cta:hover{background:var(--orange);border-color:var(--orange);}
+.locations{background:#111;}
+.locations-inner{max-width:1200px;margin:0 auto;}
+.locations-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:60px;flex-wrap:wrap;gap:24px;}
+.locations-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.location-pill{border:1px solid rgba(255,255,255,0.1);padding:20px 24px;display:flex;align-items:center;gap:16px;transition:all .2s;}
+.location-pill:hover{border-color:var(--orange);background:rgba(232,81,10,0.06);}
+.location-dot{width:8px;height:8px;background:var(--orange);flex-shrink:0;}
+.location-name{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
+.location-type{font-size:11px;color:var(--text-mid);margin-top:2px;}
+.locations-note{margin-top:32px;font-size:14px;color:var(--text-mid);border-left:2px solid var(--orange);padding-left:16px;}
+.testimonials{background:var(--black);}
+.testimonials-inner{max-width:1200px;margin:0 auto;}
+.testimonials-header{margin-bottom:60px;}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.testimonial-card{background:#111;border:1px solid rgba(255,255,255,0.06);padding:32px;}
+.testimonial-stars{color:var(--orange);font-size:14px;letter-spacing:2px;margin-bottom:16px;}
+.testimonial-text{font-size:15px;line-height:1.75;color:rgba(255,255,255,0.8);margin-bottom:24px;}
+.testimonial-author{display:flex;align-items:center;gap:12px;}
+.testimonial-avatar{width:40px;height:40px;background:var(--orange);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;flex-shrink:0;}
+.testimonial-name{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;}
+.testimonial-meta{font-size:11px;color:var(--text-mid);margin-top:2px;}
+.process{background:#111;}
+.process-inner{max-width:1200px;margin:0 auto;}
+.process-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:60px;}
+.process-step{padding:0 32px;text-align:center;}
+.step-num{width:56px;height:56px;background:var(--orange);font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;}
+.step-title{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;text-transform:uppercase;margin-bottom:10px;}
+.step-text{font-size:13px;color:var(--text-mid);line-height:1.7;}
+.cta-banner{background:var(--orange);padding:80px 48px;text-align:center;}
+.cta-banner h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(40px,6vw,80px);font-weight:900;text-transform:uppercase;line-height:.95;margin-bottom:24px;}
+.cta-banner p{font-size:17px;opacity:.85;margin-bottom:40px;}
+.btn-dark{background:var(--black);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:16px 40px;border:none;cursor:pointer;display:inline-block;}
+.contact{background:var(--black);}
+.contact-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;}
+.contact-form{display:flex;flex-direction:column;gap:16px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-input{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:var(--white);font-family:'Barlow',sans-serif;font-size:14px;padding:14px 16px;width:100%;}
+.form-input::placeholder{color:#888;}
+.form-input:focus{outline:none;border-color:var(--orange);}
+textarea.form-input{resize:vertical;min-height:120px;}
+select.form-input option{background:var(--black);}
+.contact-info-title{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:900;text-transform:uppercase;margin-bottom:12px;}
+.contact-detail{margin-bottom:20px;}
+.contact-detail-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-mid);margin-bottom:3px;}
+.contact-detail-value{font-size:15px;}
+.contact-hours{margin-top:32px;border:1px solid rgba(255,255,255,0.08);padding:24px;}
+.hours-title{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;margin-bottom:12px;}
+.hours-row{display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+.hours-row:last-child{border-bottom:none;}
+.hours-row span:last-child{color:var(--orange);}
+footer{background:#050505;padding:60px 48px 32px;border-top:1px solid rgba(255,255,255,0.06);}
+.footer-inner{max-width:1200px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;letter-spacing:2px;margin-bottom:16px;}
+.footer-brand span{color:var(--orange);}
+.footer-desc{font-size:13px;color:var(--text-mid);line-height:1.7;max-width:280px;}
+.footer-col-title{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-mid);margin-bottom:16px;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-links a{font-size:13px;color:rgba(255,255,255,0.5);}
+.footer-links a:hover{color:var(--white);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:12px;color:var(--text-mid);}
+.social-links{display:flex;gap:16px;}
+.social-link{width:34px;height:34px;border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--text-mid);}
+.social-link:hover{border-color:var(--orange);color:var(--orange);}
+@media(max-width:768px){
+.why-inner,.contact-inner,.footer-top{grid-template-columns:1fr;}
+.services-grid,.trainers-grid,.testimonials-grid,.locations-grid{grid-template-columns:1fr;}
+.hero{padding:100px 24px 60px;}
+section{padding:60px 24px;}
+.hero-stats{gap:24px;}
+nav{padding:0 24px;}
+.nav-links{display:none;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">AR<span>.</span>FITNESS</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#trainers">Trainers</a></li>
+    <li><a href="#locations">Locations</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta">Book Free Assessment</button>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-eyebrow">Vancouver's Premier Personal Training Team</div>
+  <h1>Stronger.<br/><em>Every</em><br/>Session.</h1>
+  <p class="hero-sub">Elite personal training in-person across downtown Vancouver and online worldwide. Real programs. Real results. No templates.</p>
+  <div class="hero-actions">
+    <button class="btn-primary">Book Your Free Assessment</button>
+    <button class="btn-ghost">Meet Our Trainers</button>
+  </div>
+  <div class="hero-stats">
+    <div><div class="hero-stat-num">500+</div><div class="hero-stat-label">Lives Transformed</div></div>
+    <div><div class="hero-stat-num">2</div><div class="hero-stat-label">Expert Trainers</div></div>
+    <div><div class="hero-stat-num">6</div><div class="hero-stat-label">Vancouver Locations</div></div>
+    <div><div class="hero-stat-num">5★</div><div class="hero-stat-label">Google Rating</div></div>
+  </div>
+</section>
+
+<section class="why" id="about">
+  <div class="why-inner">
+    <div>
+      <div class="section-eyebrow">Why AR Fitness</div>
+      <h2 class="section-title">We Build<br/><em>Roadmaps,</em><br/>Not Workouts.</h2>
+      <p style="margin-top:24px;font-size:15px;color:var(--text-mid);line-height:1.8;max-width:480px;">We go beyond the session. Every client gets precision programming built around their body, their goals, and their life — with 365-day accountability and long-term mentorship that actually sticks.</p>
+      <div class="online-badge">● Now Accepting Online Clients</div>
+      <div class="why-pillars">
+        <div class="pillar"><div class="pillar-title">Multi-Dimensional Training</div><div class="pillar-text">Body recomposition, mobility, and long-term joint health — all in one program.</div></div>
+        <div class="pillar"><div class="pillar-title">Built for Your Biology</div><div class="pillar-text">No templates. Every program is precision-engineered for your unique body and lifestyle.</div></div>
+        <div class="pillar"><div class="pillar-title">Strength Without Pain</div><div class="pillar-text">We raise your physical ceiling while identifying and reducing chronic movement pain.</div></div>
+        <div class="pillar"><div class="pillar-title">365 Accountability</div><div class="pillar-text">Daily guidance and a dedicated app mean you're never left to figure it out alone.</div></div>
+      </div>
+    </div>
+    <div class="why-image">
+      <img src="https://images.unsplash.com/photo-1571019613914-85f342c6a11e?w=800&q=80" alt="Personal training session"/>
+      <div class="why-image-badge">
+        <div class="why-image-badge-num">10+</div>
+        <div class="why-image-badge-label">Years in Vancouver</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="services-header">
+      <div>
+        <div class="section-eyebrow">What We Offer</div>
+        <h2 class="section-title">Training<br/><em>Designed</em><br/>to Deliver.</h2>
+      </div>
+      <button class="btn-primary">See All Services</button>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><div class="service-num">01</div><div class="service-name">In-Person Training</div><div class="service-desc">One-on-one coaching at Evolve Strength. Real-time feedback, expert form correction, and a program that evolves as you do.</div><a class="service-link" href="#">Explore →</a></div>
+      <div class="service-card"><div class="service-num">02</div><div class="service-name">Online Coaching</div><div class="service-desc">Full programming, check-ins, and accountability — train anywhere, on your schedule.</div><a class="service-link" href="#">Explore →</a></div>
+      <div class="service-card"><div class="service-num">03</div><div class="service-name">Body Recomposition</div><div class="service-desc">Lose fat and build muscle simultaneously with our science-backed approach to sustainable body change.</div><a class="service-link" href="#">Explore →</a></div>
+      <div class="service-card"><div class="service-num">04</div><div class="service-name">Strength & Muscle</div><div class="service-desc">Progressive overload programming built for real strength gains. Structured, intentional, designed to perform for decades.</div><a class="service-link" href="#">Explore →</a></div>
+      <div class="service-card"><div class="service-num">05</div><div class="service-name">Mobility & Recovery</div><div class="service-desc">We build mobility and corrective exercise into every program to keep you training injury-free long-term.</div><a class="service-link" href="#">Explore →</a></div>
+      <div class="service-card"><div class="service-num">06</div><div class="service-name">Women's Health & Fitness</div><div class="service-desc">Specialized programming for women's health, body recomposition, and building confidence — at every starting point.</div><a class="service-link" href="#">Explore →</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="trainers" id="trainers">
+  <div class="trainers-inner">
+    <div class="trainers-header">
+      <div class="section-eyebrow">The Team</div>
+      <h2 class="section-title">Meet Your<br/><em>Coaches.</em></h2>
+      <p style="margin-top:16px;font-size:15px;color:var(--text-mid);max-width:520px;line-height:1.7;">Two coaches. Two perspectives. One shared commitment to your long-term results.</p>
+    </div>
+    <div class="trainers-grid">
+      <div class="trainer-card">
+        <img class="trainer-img" src="alochen.jpg" alt="Alochen Rajaratnam" onerror="this.src='https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=600&q=80'"/>
+        <div class="trainer-info">
+          <div class="trainer-name">Alochen Rajaratnam</div>
+          <div class="trainer-title">Founder & Head Coach</div>
+          <div class="trainer-bio">Growing up in Canada to Sri Lankan immigrant parents, Alochen knows what it means to work hard for change. Once an overweight kid, he transformed his life through discipline and consistency — and today channels that same drive into helping others rewrite their own stories.</div>
+          <div class="trainer-specs"><span class="trainer-spec">Body Recomp</span><span class="trainer-spec">Strength</span><span class="trainer-spec">Longevity</span></div>
+          <button class="trainer-cta">Book with Alochen</button>
+        </div>
+      </div>
+      <div class="trainer-card">
+        <img class="trainer-img" src="ekko.jpg" alt="Ekko Bonder" onerror="this.src='https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80'"/>
+        <div class="trainer-info">
+          <div class="trainer-name">Ekko Bonder</div>
+          <div class="trainer-title">Senior Coach</div>
+          <div class="trainer-bio">Ekko grew up in the equestrian world until early-onset arthritis at 15 pushed her to find new ways to stay strong. That journey led her to the gym, where she rebuilt her health and found her passion. She now specializes in body recomposition and women's health — helping others feel strong and confident, no matter their starting point.</div>
+          <div class="trainer-specs"><span class="trainer-spec">Women's Health</span><span class="trainer-spec">Body Recomp</span><span class="trainer-spec">Mobility</span></div>
+          <button class="trainer-cta">Book with Ekko</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="locations" id="locations">
+  <div class="locations-inner">
+    <div class="locations-header">
+      <div>
+        <div class="section-eyebrow">Where We Train</div>
+        <h2 class="section-title">Vancouver's<br/><em>Best</em> Gyms.</h2>
+      </div>
+      <p style="font-size:14px;color:var(--text-mid);max-width:340px;line-height:1.7;align-self:flex-end;">We train clients across Vancouver's top neighbourhoods — in-person and online worldwide.</p>
+    </div>
+    <div class="locations-grid">
+      <div class="location-pill"><div class="location-dot"></div><div><div class="location-name">Downtown</div><div class="location-type">In-Person · Evolve Strength</div></div></div>
+      <div class="location-pill"><div class="location-dot"></div><div><div class="location-name">Coal Harbour</div><div class="location-type">In-Person</div></div></div>
+      <div class="location-pill"><div class="location-dot"></div><div><div class="location-name">Olympic Village</div><div class="location-type">In-Person</div></div></div>
+      <div class="location-pill"><div class="location-dot"></div><div><div class="location-name">Kitsilano</div><div class="location-type">In-Person</div></div></div>
+      <div class="location-pill"><div class="location-dot"></div><div><div class="location-name">Yaletown</div><div class="location-type">In-Person</div></div></div>
+      <div class="location-pill"><div class="location-dot"></div><div><div class="location-name">West End</div><div class="location-type">In-Person</div></div></div>
+    </div>
+    <div class="locations-note">Also offering online coaching across Canada and worldwide. Train with AR Fitness from anywhere.</div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <div class="testimonials-inner">
+    <div class="testimonials-header">
+      <div class="section-eyebrow">Client Results</div>
+      <h2 class="section-title">Real People.<br/><em>Real</em> Results.</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"I have been training under Alochen for several years on and off. He's a really great trainer and understands each person's requirements and weak spots and adjusts plans accordingly. I was able to grow muscles and gain more confidence while working out."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AS</div>
+          <div><div class="testimonial-name">Ankur S.</div><div class="testimonial-meta">Long-term client · Google Review</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Ekko is an amazing personal trainer and such a lovely person to work with. She is kind, approachable, and genuinely attentive. Her approach has really helped me stick to a routine this time instead of getting discouraged. She considers not only your physical progress but your mental well-being as well."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">DG</div>
+          <div><div class="testimonial-name">Denis G.</div><div class="testimonial-meta">Training with Ekko · Google Review</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"I used to think I'd missed my window to start bodybuilding. That changed when I started working with Alochen. He didn't just give me a workout plan — he gave me the motivation to finally chase the goals I thought I'd left behind. Grateful for the journey so far!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">ST</div>
+          <div><div class="testimonial-name">Satina T.</div><div class="testimonial-meta">Training with Alochen · Google Review</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="process-inner">
+    <div class="section-eyebrow">Getting Started</div>
+    <h2 class="section-title">Three Steps<br/>to <em>Your</em> Best Shape.</h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <div class="step-title">Free Assessment</div>
+        <div class="step-text">Book a free consult. We learn your goals, history, and what's been holding you back — no obligation, no pressure.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <div class="step-title">Your Custom Plan</div>
+        <div class="step-text">We build a precision program around your body, your schedule, and your goals. No templates, ever.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <div class="step-title">Train & Transform</div>
+        <div class="step-text">Execute with expert guidance and full accountability. Track real progress. See real results — that last.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-banner">
+  <h2>Ready to Stop<br/>Guessing?</h2>
+  <p>Book your free assessment today. No commitment, just clarity.</p>
+  <button class="btn-dark">Book Your Free Assessment</button>
+</div>
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="section-eyebrow">Get in Touch</div>
+      <h2 class="section-title" style="margin-bottom:40px;">Start Your<br/><em>Journey.</em></h2>
+      <div class="contact-form">
+        <div class="form-row">
+          <input class="form-input" type="text" placeholder="First Name"/>
+          <input class="form-input" type="text" placeholder="Last Name"/>
+        </div>
+        <input class="form-input" type="email" placeholder="Email Address"/>
+        <input class="form-input" type="tel" placeholder="Phone Number"/>
+        <select class="form-input">
+          <option value="" disabled selected>Preferred Trainer</option>
+          <option>Alochen Rajaratnam</option>
+          <option>Ekko Bonder</option>
+          <option>No preference</option>
+        </select>
+        <select class="form-input">
+          <option value="" disabled selected>Training Type</option>
+          <option>In-Person Training</option>
+          <option>Online Coaching</option>
+          <option>Not Sure Yet</option>
+        </select>
+        <textarea class="form-input" placeholder="Tell us about your goals..."></textarea>
+        <a href="mailto:alochen@arfitness.ca?subject=New Training Inquiry from Website" class="btn-primary" style="width:100%;padding:18px;text-align:center;display:block;">Send Message</a>
+      </div>
+    </div>
+    <div>
+      <div class="contact-info-title">AR Fitness Vancouver</div>
+      <p style="font-size:14px;color:var(--text-mid);margin-bottom:32px;line-height:1.7;">Based at Evolve Strength — one of Vancouver's premier training facilities. We respond to all inquiries within 24 hours.</p>
+      <div class="contact-detail"><div class="contact-detail-label">Address</div><div class="contact-detail-value">Evolve Strength, Downtown Vancouver, BC</div></div>
+      <div class="contact-detail"><div class="contact-detail-label">Phone</div><div class="contact-detail-value">(778) 302-9995</div></div>
+      <div class="contact-detail"><div class="contact-detail-label">Email</div><div class="contact-detail-value">alochen@arfitness.ca</div></div>
+      <div class="contact-hours">
+        <div class="hours-title">Hours of Operation</div>
+        <div class="hours-row"><span>Monday – Saturday</span><span>5:00 AM – 9:00 PM</span></div>
+        <div class="hours-row"><span>Sunday</span><span>By Appointment</span></div>
+      </div>
+      <div style="margin-top:28px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-mid);margin-bottom:12px;">Follow Us</div>
+        <div class="social-links">
+          <a class="social-link" href="https://www.instagram.com/alochenrajaratnam/" target="_blank">IG</a>
+          <a class="social-link" href="#">FB</a>
+          <a class="social-link" href="#">TT</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">AR<span>.</span>FITNESS</div>
+        <p class="footer-desc">Vancouver's premier personal training team. In-person across the city. Online worldwide. Built around you.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="#">In-Person Training</a></li>
+          <li><a href="#">Online Coaching</a></li>
+          <li><a href="#">Body Recomposition</a></li>
+          <li><a href="#">Strength Training</a></li>
+          <li><a href="#">Women's Health</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Locations</div>
+        <ul class="footer-links">
+          <li><a href="#">Downtown</a></li>
+          <li><a href="#">Coal Harbour</a></li>
+          <li><a href="#">Olympic Village</a></li>
+          <li><a href="#">Kitsilano</a></li>
+          <li><a href="#">Yaletown</a></li>
+          <li><a href="#">West End</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Trainers</a></li>
+          <li><a href="#">Client Results</a></li>
+          <li><a href="#">Book Assessment</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 AR Fitness. All rights reserved. Vancouver, BC.</div>
+      <div class="social-links">
+        <a class="social-link" href="https://www.instagram.com/alochenrajaratnam/" target="_blank">IG</a>
+        <a class="social-link" href="#">FB</a>
+        <a class="social-link" href="#">TT</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
