@@ -59,7 +59,10 @@ section{padding:100px 48px;}
 .trainers{background:var(--black);}
 .trainers-inner{max-width:1200px;margin:0 auto;}
 .trainers-header{margin-bottom:60px;}
-.trainers-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:800px;}
+.trainers-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;width:100%;}
+.trainer-card{display:flex;flex-direction:column;}
+.trainer-info{display:flex;flex-direction:column;flex:1;padding:24px;}
+.trainer-cta{margin-top:auto;}
 .trainer-card{background:#111;border:1px solid rgba(255,255,255,0.06);overflow:hidden;}
 .trainer-img{width:100%;height:480px;object-fit:cover;object-position:top;display:block;filter:grayscale(20%);transition:filter .3s;}
 .trainer-card:hover .trainer-img{filter:grayscale(0%);}
@@ -139,11 +142,24 @@ footer{background:#050505;padding:60px 48px 32px;border-top:1px solid rgba(255,2
 @media(max-width:768px){
 .why-inner,.contact-inner,.footer-top{grid-template-columns:1fr;}
 .services-grid,.trainers-grid,.testimonials-grid,.locations-grid{grid-template-columns:1fr;}
-.hero{padding:100px 24px 60px;}
-section{padding:60px 24px;}
-.hero-stats{gap:24px;}
-nav{padding:0 24px;}
+.hero{padding:100px 20px 60px;}
+section{padding:60px 20px;}
+.hero-stats{gap:20px;flex-wrap:wrap;}
+.hero-stat-num{font-size:32px;}
+nav{padding:0 20px;}
 .nav-links{display:none;}
+.hero h1{font-size:clamp(48px,14vw,80px);}
+.section-title{font-size:clamp(36px,10vw,56px);}
+.form-row{grid-template-columns:1fr;}
+.contact-inner{gap:40px;}
+.footer-top{gap:32px;}
+.process-steps{grid-template-columns:1fr;gap:40px;}
+.testimonials-grid{grid-template-columns:1fr;}
+.locations-grid{grid-template-columns:1fr 1fr;}
+.services-header{flex-direction:column;align-items:flex-start;}
+.trainer-img{height:300px;}
+.cta-banner{padding:60px 20px;}
+.why-image img{height:360px;}
 }
 </style>
 </head>
@@ -344,28 +360,28 @@ nav{padding:0 24px;}
     <div>
       <div class="section-eyebrow">Get in Touch</div>
       <h2 class="section-title" style="margin-bottom:40px;">Start Your<br/><em>Journey.</em></h2>
-      <div class="contact-form">
+      <form class="contact-form" action="https://formspree.io/f/xqevyvoz" method="POST">
         <div class="form-row">
-          <input class="form-input" type="text" placeholder="First Name"/>
-          <input class="form-input" type="text" placeholder="Last Name"/>
+          <input class="form-input" type="text" name="first_name" placeholder="First Name" required/>
+          <input class="form-input" type="text" name="last_name" placeholder="Last Name" required/>
         </div>
-        <input class="form-input" type="email" placeholder="Email Address"/>
-        <input class="form-input" type="tel" placeholder="Phone Number"/>
-        <select class="form-input">
+        <input class="form-input" type="email" name="email" placeholder="Email Address" required/>
+        <input class="form-input" type="tel" name="phone" placeholder="Phone Number"/>
+        <select class="form-input" name="preferred_trainer">
           <option value="" disabled selected>Preferred Trainer</option>
           <option>Alochen Rajaratnam</option>
           <option>Ekko Bonder</option>
           <option>No preference</option>
         </select>
-        <select class="form-input">
+        <select class="form-input" name="training_type">
           <option value="" disabled selected>Training Type</option>
           <option>In-Person Training</option>
           <option>Online Coaching</option>
           <option>Not Sure Yet</option>
         </select>
-        <textarea class="form-input" placeholder="Tell us about your goals..."></textarea>
-        <a href="mailto:alochen@arfitness.ca?subject=New Training Inquiry from Website" class="btn-primary" style="width:100%;padding:18px;text-align:center;display:block;">Send Message</a>
-      </div>
+        <textarea class="form-input" name="message" placeholder="Tell us about your goals..."></textarea>
+        <button type="submit" class="btn-primary" style="width:100%;padding:18px;text-align:center;display:block;border:none;cursor:pointer;">Send Message</button>
+      </form>
     </div>
     <div>
       <div class="contact-info-title">AR Fitness Vancouver</div>
