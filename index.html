@@ -59,20 +59,18 @@ section{padding:100px 48px;}
 .trainers{background:var(--black);}
 .trainers-inner{max-width:1200px;margin:0 auto;}
 .trainers-header{margin-bottom:60px;}
-.trainers-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;width:100%;}
-.trainer-card{display:flex;flex-direction:column;}
-.trainer-info{display:flex;flex-direction:column;flex:1;padding:24px;}
-.trainer-cta{margin-top:auto;}
-.trainer-card{background:#111;border:1px solid rgba(255,255,255,0.06);overflow:hidden;}
-.trainer-img{width:100%;height:480px;object-fit:cover;object-position:top;display:block;filter:grayscale(20%);transition:filter .3s;}
+.trainers-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;width:100%;}
+.trainer-card{display:flex;flex-direction:column;background:#111;border:1px solid rgba(255,255,255,0.06);overflow:hidden;}
+.trainer-img-wrap{width:100%;aspect-ratio:3/4;overflow:hidden;background:#1a1a1a;}
+.trainer-img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:grayscale(20%);transition:filter .3s;}
 .trainer-card:hover .trainer-img{filter:grayscale(0%);}
-.trainer-info{padding:24px;}
+.trainer-info{display:flex;flex-direction:column;flex:1;padding:28px;}
 .trainer-name{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;text-transform:uppercase;}
 .trainer-title{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-top:4px;}
-.trainer-bio{font-size:13px;color:var(--text-mid);line-height:1.7;margin-top:12px;}
-.trainer-specs{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;}
+.trainer-bio{font-size:13px;color:var(--text-mid);line-height:1.7;margin-top:12px;flex:1;}
+.trainer-specs{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;}
 .trainer-spec{font-size:11px;color:var(--text-mid);background:rgba(255,255,255,0.05);padding:4px 10px;}
-.trainer-cta{display:block;margin-top:16px;background:transparent;border:1px solid rgba(255,255,255,0.15);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:10px;text-align:center;cursor:pointer;width:100%;transition:all .2s;}
+.trainer-cta{display:block;margin-top:20px;background:transparent;border:1px solid rgba(255,255,255,0.15);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:12px;text-align:center;cursor:pointer;width:100%;transition:all .2s;text-decoration:none;}
 .trainer-cta:hover{background:var(--orange);border-color:var(--orange);}
 .locations{background:#111;}
 .locations-inner{max-width:1200px;margin:0 auto;}
@@ -142,6 +140,7 @@ footer{background:#050505;padding:60px 48px 32px;border-top:1px solid rgba(255,2
 @media(max-width:768px){
 .why-inner,.contact-inner,.footer-top{grid-template-columns:1fr;}
 .services-grid,.trainers-grid,.testimonials-grid,.locations-grid{grid-template-columns:1fr;}
+.trainer-img-wrap{aspect-ratio:4/3;}
 .hero{padding:100px 20px 60px;}
 section{padding:60px 20px;}
 .hero-stats{gap:20px;flex-wrap:wrap;}
@@ -246,7 +245,7 @@ nav{padding:0 20px;}
     </div>
     <div class="trainers-grid">
       <div class="trainer-card">
-        <img class="trainer-img" src="alochen.jpg" alt="Alochen Rajaratnam" onerror="this.src='https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=600&q=80'"/>
+        <div class="trainer-img-wrap"><img class="trainer-img" src="alochen.jpg" alt="Alochen Rajaratnam" onerror="this.src='https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=600&q=80'"/></div>
         <div class="trainer-info">
           <div class="trainer-name">Alochen Rajaratnam</div>
           <div class="trainer-title">Founder & Head Coach</div>
@@ -256,7 +255,7 @@ nav{padding:0 20px;}
         </div>
       </div>
       <div class="trainer-card">
-        <img class="trainer-img" src="ekko.jpg" alt="Ekko Bonder" onerror="this.src='https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80'"/>
+        <div class="trainer-img-wrap"><img class="trainer-img" src="ekko.jpg" alt="Ekko Bonder" onerror="this.src='https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80'"/></div>
         <div class="trainer-info">
           <div class="trainer-name">Ekko Bonder</div>
           <div class="trainer-title">Senior Coach</div>
