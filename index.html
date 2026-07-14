@@ -55,13 +55,12 @@ section{padding:100px 48px;}
 .service-num{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--orange);letter-spacing:2px;margin-bottom:20px;}
 .service-name{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;text-transform:uppercase;margin-bottom:12px;}
 .service-desc{font-size:14px;color:var(--text-mid);line-height:1.7;}
-.service-link{display:inline-block;margin-top:20px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);}
 .trainers{background:var(--black);}
 .trainers-inner{max-width:1200px;margin:0 auto;}
 .trainers-header{margin-bottom:60px;}
 .trainers-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;width:100%;}
 .trainer-card{display:flex;flex-direction:column;background:#111;border:1px solid rgba(255,255,255,0.06);overflow:hidden;}
-.trainer-img-wrap{width:100%;aspect-ratio:3/4;overflow:hidden;background:#1a1a1a;}
+.trainer-img-wrap{width:100%;aspect-ratio:1/1;overflow:hidden;background:#1a1a1a;}
 .trainer-img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:grayscale(20%);transition:filter .3s;}
 .trainer-card:hover .trainer-img{filter:grayscale(0%);}
 .trainer-info{display:flex;flex-direction:column;flex:1;padding:28px;}
@@ -126,7 +125,6 @@ footer{background:#050505;padding:60px 48px 32px;border-top:1px solid rgba(255,2
 .footer-inner{max-width:1200px;margin:0 auto;}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
 .footer-brand{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;letter-spacing:2px;margin-bottom:16px;}
-.footer-brand span{color:var(--orange);}
 .footer-desc{font-size:13px;color:var(--text-mid);line-height:1.7;max-width:280px;}
 .footer-col-title{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-mid);margin-bottom:16px;}
 .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
@@ -140,7 +138,8 @@ footer{background:#050505;padding:60px 48px 32px;border-top:1px solid rgba(255,2
 @media(max-width:768px){
 .why-inner,.contact-inner,.footer-top{grid-template-columns:1fr;}
 .services-grid,.trainers-grid,.testimonials-grid,.locations-grid{grid-template-columns:1fr;}
-.trainer-img-wrap{aspect-ratio:4/3;}
+.trainer-img-wrap{aspect-ratio:1/1;}
+.trainers-grid{grid-template-columns:1fr;}
 .hero{padding:100px 20px 60px;}
 section{padding:60px 20px;}
 .hero-stats{gap:20px;flex-wrap:wrap;}
@@ -156,16 +155,14 @@ nav{padding:0 20px;}
 .testimonials-grid{grid-template-columns:1fr;}
 .locations-grid{grid-template-columns:1fr 1fr;}
 .services-header{flex-direction:column;align-items:flex-start;}
-.trainer-img{height:300px;}
 .cta-banner{padding:60px 20px;}
 .why-image img{height:360px;}
 }
 </style>
 </head>
 <body>
-
 <nav>
-  <div class="nav-logo">AR<span>.</span>FITNESS</div>
+  <div class="nav-logo">AR FITNESS</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
@@ -175,7 +172,6 @@ nav{padding:0 20px;}
   </ul>
   <a href="#contact" class="nav-cta" style="text-decoration:none;">Book Free Assessment</a>
 </nav>
-
 <section class="hero" id="home">
   <div class="hero-eyebrow">Vancouver's Premier Personal Training Team</div>
   <h1>Stronger.<br/><em>Every</em><br/>Session.</h1>
@@ -191,7 +187,6 @@ nav{padding:0 20px;}
     <div><div class="hero-stat-num">5★</div><div class="hero-stat-label">Google Rating</div></div>
   </div>
 </section>
-
 <section class="why" id="about">
   <div class="why-inner">
     <div>
@@ -215,7 +210,6 @@ nav{padding:0 20px;}
     </div>
   </div>
 </section>
-
 <section class="services" id="services">
   <div class="services-inner">
     <div class="services-header">
@@ -235,7 +229,6 @@ nav{padding:0 20px;}
     </div>
   </div>
 </section>
-
 <section class="trainers" id="trainers">
   <div class="trainers-inner">
     <div class="trainers-header">
@@ -267,7 +260,6 @@ nav{padding:0 20px;}
     </div>
   </div>
 </section>
-
 <section class="locations" id="locations">
   <div class="locations-inner">
     <div class="locations-header">
@@ -280,15 +272,12 @@ nav{padding:0 20px;}
     <div class="locations-grid">
       <div class="location-pill"><div class="location-dot"></div><div><div class="location-name">Downtown</div><div class="location-type">In-Person · Evolve Strength</div></div></div>
       <div class="location-pill"><div class="location-dot"></div><div><div class="location-name">Coal Harbour</div><div class="location-type">In-Person</div></div></div>
-      <div class="location-pill"><div class="location-dot"></div><div><div class="location-name">Olympic Village</div><div class="location-type">In-Person</div></div></div>
-      <div class="location-pill"><div class="location-dot"></div><div><div class="location-name">Kitsilano</div><div class="location-type">In-Person</div></div></div>
       <div class="location-pill"><div class="location-dot"></div><div><div class="location-name">Yaletown</div><div class="location-type">In-Person</div></div></div>
       <div class="location-pill"><div class="location-dot"></div><div><div class="location-name">West End</div><div class="location-type">In-Person</div></div></div>
     </div>
     <div class="locations-note">Also offering online coaching across Canada and worldwide. Train with AR Fitness from anywhere.</div>
   </div>
 </section>
-
 <section class="testimonials" id="testimonials">
   <div class="testimonials-inner">
     <div class="testimonials-header">
@@ -299,61 +288,37 @@ nav{padding:0 20px;}
       <div class="testimonial-card">
         <div class="testimonial-stars">★★★★★</div>
         <p class="testimonial-text">"I have been training under Alochen for several years on and off. He's a really great trainer and understands each person's requirements and weak spots and adjusts plans accordingly. I was able to grow muscles and gain more confidence while working out."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">AS</div>
-          <div><div class="testimonial-name">Ankur S.</div><div class="testimonial-meta">Long-term client · Google Review</div></div>
-        </div>
+        <div class="testimonial-author"><div class="testimonial-avatar">AS</div><div><div class="testimonial-name">Ankur S.</div><div class="testimonial-meta">Long-term client · Google Review</div></div></div>
       </div>
       <div class="testimonial-card">
         <div class="testimonial-stars">★★★★★</div>
         <p class="testimonial-text">"Ekko is an amazing personal trainer and such a lovely person to work with. She is kind, approachable, and genuinely attentive. Her approach has really helped me stick to a routine this time instead of getting discouraged. She considers not only your physical progress but your mental well-being as well."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">DG</div>
-          <div><div class="testimonial-name">Denis G.</div><div class="testimonial-meta">Training with Ekko · Google Review</div></div>
-        </div>
+        <div class="testimonial-author"><div class="testimonial-avatar">DG</div><div><div class="testimonial-name">Denis G.</div><div class="testimonial-meta">Training with Ekko · Google Review</div></div></div>
       </div>
       <div class="testimonial-card">
         <div class="testimonial-stars">★★★★★</div>
         <p class="testimonial-text">"I used to think I'd missed my window to start bodybuilding. That changed when I started working with Alochen. He didn't just give me a workout plan — he gave me the motivation to finally chase the goals I thought I'd left behind. Grateful for the journey so far!"</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">ST</div>
-          <div><div class="testimonial-name">Satina T.</div><div class="testimonial-meta">Training with Alochen · Google Review</div></div>
-        </div>
+        <div class="testimonial-author"><div class="testimonial-avatar">ST</div><div><div class="testimonial-name">Satina T.</div><div class="testimonial-meta">Training with Alochen · Google Review</div></div></div>
       </div>
     </div>
   </div>
 </section>
-
 <section class="process" id="process">
   <div class="process-inner">
     <div class="section-eyebrow">Getting Started</div>
     <h2 class="section-title">Three Steps<br/>to <em>Your</em> Best Shape.</h2>
     <div class="process-steps">
-      <div class="process-step">
-        <div class="step-num">1</div>
-        <div class="step-title">Free Assessment</div>
-        <div class="step-text">Book a free consult. We learn your goals, history, and what's been holding you back — no obligation, no pressure.</div>
-      </div>
-      <div class="process-step">
-        <div class="step-num">2</div>
-        <div class="step-title">Your Custom Plan</div>
-        <div class="step-text">We build a precision program around your body, your schedule, and your goals. No templates, ever.</div>
-      </div>
-      <div class="process-step">
-        <div class="step-num">3</div>
-        <div class="step-title">Train & Transform</div>
-        <div class="step-text">Execute with expert guidance and full accountability. Track real progress. See real results — that last.</div>
-      </div>
+      <div class="process-step"><div class="step-num">1</div><div class="step-title">Free Assessment</div><div class="step-text">Book a free consult. We learn your goals, history, and what's been holding you back — no obligation, no pressure.</div></div>
+      <div class="process-step"><div class="step-num">2</div><div class="step-title">Your Custom Plan</div><div class="step-text">We build a precision program around your body, your schedule, and your goals. No templates, ever.</div></div>
+      <div class="process-step"><div class="step-num">3</div><div class="step-title">Train & Transform</div><div class="step-text">Execute with expert guidance and full accountability. Track real progress. See real results — that last.</div></div>
     </div>
   </div>
 </section>
-
 <div class="cta-banner">
   <h2>Ready to Stop<br/>Guessing?</h2>
   <p>Book your free assessment today. No commitment, just clarity.</p>
   <a href="#contact" class="btn-dark">Book Your Free Assessment</a>
 </div>
-
 <section class="contact" id="contact">
   <div class="contact-inner">
     <div>
@@ -404,12 +369,11 @@ nav{padding:0 20px;}
     </div>
   </div>
 </section>
-
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
       <div>
-        <div class="footer-brand">AR<span>.</span>FITNESS</div>
+        <div class="footer-brand">AR FITNESS</div>
         <p class="footer-desc">Vancouver's premier personal training team. In-person across the city. Online worldwide. Built around you.</p>
       </div>
       <div>
@@ -427,8 +391,6 @@ nav{padding:0 20px;}
         <ul class="footer-links">
           <li><a href="#">Downtown</a></li>
           <li><a href="#">Coal Harbour</a></li>
-          <li><a href="#">Olympic Village</a></li>
-          <li><a href="#">Kitsilano</a></li>
           <li><a href="#">Yaletown</a></li>
           <li><a href="#">West End</a></li>
         </ul>
@@ -454,6 +416,5 @@ nav{padding:0 20px;}
     </div>
   </div>
 </footer>
-
 </body>
 </html>
