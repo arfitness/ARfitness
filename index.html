@@ -53,7 +53,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-:root{--black:#0a0a0a;--orange:#ffffff;--orange-dark:#cccccc;--white:#ffffff;--text-mid:#888;--text-light:#bbb;}
+:root{--black:#0a0a0a;--orange:#ffffff;--orange-dark:#cccccc;--white:#ffffff;--text-mid:#888;--text-light:#bbb;--accent:#E8510A;}
 body{font-family:'Barlow',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;}
 a{color:inherit;text-decoration:none;}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:72px;background:rgba(10,10,10,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.06);}
@@ -72,7 +72,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-eyebrow{font-family:'Orbitron',sans-serif;font-size:12px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--text-light);margin-top:14px;}
 .hero-main{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:end;}
 .hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(44px,5.6vw,80px);font-weight:900;line-height:.92;letter-spacing:-.5px;text-transform:uppercase;margin-bottom:0;}
-.hero h1 em{font-style:normal;color:var(--orange);}
+.hero h1 em{font-style:normal;color:var(--accent);}
 .hero-sub{font-size:17px;color:var(--text-light);max-width:480px;line-height:1.7;margin-bottom:28px;}
 .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
 .btn-primary{background:var(--white);color:var(--black);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:16px 36px;border:none;cursor:pointer;transition:background .2s;display:inline-block;}
@@ -83,9 +83,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-stat-num{font-family:'Orbitron',sans-serif;font-size:34px;font-weight:700;color:var(--orange);}
 .hero-stat-label{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text-mid);margin-top:2px;}
 section{padding:100px 48px;}
-.section-eyebrow{font-family:'Orbitron',sans-serif;font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--orange);margin-bottom:16px;}
+.section-eyebrow{font-family:'Orbitron',sans-serif;font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
 .section-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(40px,5vw,68px);font-weight:900;text-transform:uppercase;line-height:.95;letter-spacing:-0.5px;}
-.section-title em{font-style:normal;color:var(--orange);}
+.section-title em{font-style:normal;color:var(--accent);}
 .why{background:var(--black);}
 .why-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1200px;margin:0 auto;}
 .why-pillars{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.07);margin-top:48px;}
@@ -98,28 +98,26 @@ section{padding:100px 48px;}
 .services-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:60px;flex-wrap:wrap;gap:24px;}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.07);}
 .service-card{background:#111;padding:40px 32px;border-bottom:3px solid transparent;transition:all .25s;}
-.service-card:hover{background:#161616;border-bottom-color:var(--orange);}
+.service-card:hover{background:#161616;border-bottom-color:var(--accent);}
 .service-num{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--orange);letter-spacing:2px;margin-bottom:20px;}
 .service-name{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;text-transform:uppercase;margin-bottom:12px;}
 .service-desc{font-size:14px;color:var(--text-mid);line-height:1.7;}
 .service-link{display:inline-block;margin-top:20px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);}
 .trainers{background:var(--black);}
 .trainers-inner{max-width:1200px;margin:0 auto;}
-.trainers-header{margin-bottom:60px;}
-.trainers-grid{display:flex;flex-direction:column;gap:40px;width:100%;}
-.trainer-card{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);background:#111;border:1px solid rgba(255,255,255,0.06);overflow:hidden;}
-.trainer-card:nth-child(even){grid-template-columns:minmax(0,6fr) minmax(0,5fr);}
-.trainer-card:nth-child(even) .trainer-img-wrap{order:2;}
-.trainer-img-wrap{position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;background:#1a1a1a;}
-.trainer-img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .4s,transform .6s;}
-.trainer-card:hover .trainer-img{filter:grayscale(0%);transform:scale(1.02);}
-.trainer-info{display:flex;flex-direction:column;justify-content:center;padding:56px 52px;}
-.trainer-name{font-family:'Barlow Condensed',sans-serif;font-size:clamp(34px,3.6vw,48px);line-height:1;font-weight:900;text-transform:uppercase;}
-.trainer-title{font-family:'Orbitron',sans-serif;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);margin-top:10px;}
-.trainer-bio{font-size:15px;color:var(--text-light);line-height:1.8;margin-top:20px;max-width:520px;}
-.trainer-specs{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;}
+.trainers-header{margin-bottom:40px;}
+.trainers-grid{display:flex;flex-direction:column;gap:20px;width:100%;max-width:960px;}
+.trainer-card{display:grid;grid-template-columns:200px minmax(0,1fr);background:#111;border:1px solid rgba(255,255,255,0.06);border-left:3px solid var(--accent);overflow:hidden;}
+.trainer-img-wrap{position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;background:#1a1a1a;align-self:start;}
+.trainer-img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:grayscale(100%) contrast(1.05);transition:filter .4s;}
+.trainer-card:hover .trainer-img{filter:grayscale(0%);}
+.trainer-info{display:flex;flex-direction:column;justify-content:center;padding:24px 32px;}
+.trainer-name{font-family:'Barlow Condensed',sans-serif;font-size:28px;line-height:1;font-weight:900;text-transform:uppercase;}
+.trainer-title{font-family:'Orbitron',sans-serif;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-top:8px;}
+.trainer-bio{font-size:14px;color:var(--text-light);line-height:1.7;margin-top:12px;max-width:620px;}
+.trainer-specs{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;}
 .trainer-spec{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);border:1px solid rgba(255,255,255,0.14);padding:6px 12px;}
-.trainer-cta{display:block;margin-top:32px;max-width:280px;background:transparent;border:1px solid rgba(255,255,255,0.15);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:12px;text-align:center;cursor:pointer;width:100%;transition:all .2s;text-decoration:none;}
+.trainer-cta{display:inline-block;margin-top:18px;max-width:220px;background:transparent;border:1px solid rgba(255,255,255,0.15);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:12px;text-align:center;cursor:pointer;width:100%;transition:all .2s;text-decoration:none;}
 .trainer-cta:hover{background:var(--white);border-color:var(--white);color:var(--black);}
 .locations{background:#111;}
 .locations-inner{max-width:1200px;margin:0 auto;}
@@ -136,7 +134,7 @@ section{padding:100px 48px;}
 .testimonials-header{margin-bottom:60px;}
 .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 .testimonial-card{background:#111;border:1px solid rgba(255,255,255,0.06);padding:32px;}
-.testimonial-stars{color:var(--orange);font-size:14px;letter-spacing:2px;margin-bottom:16px;}
+.testimonial-stars{color:var(--accent);font-size:14px;letter-spacing:2px;margin-bottom:16px;}
 .testimonial-text{font-size:15px;line-height:1.75;color:rgba(255,255,255,0.8);margin-bottom:24px;}
 .testimonial-author{display:flex;align-items:center;gap:12px;}
 .testimonial-avatar{width:40px;height:40px;background:#333;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;flex-shrink:0;}
@@ -189,9 +187,12 @@ footer{background:#050505;padding:60px 48px 32px;border-top:1px solid rgba(255,2
 @media(max-width:768px){
 .why-inner,.contact-inner,.footer-top{grid-template-columns:1fr;}
 .services-grid,.trainers-grid,.testimonials-grid,.locations-grid{grid-template-columns:1fr;}
-.trainer-card,.trainer-card:nth-child(even){grid-template-columns:1fr;}
-.trainer-card:nth-child(even) .trainer-img-wrap{order:0;}
-.trainer-info{padding:28px 22px 32px;}
+.trainer-card{grid-template-columns:110px minmax(0,1fr);}
+.trainer-info{padding:16px 16px 20px;}
+.trainer-name{font-size:22px;}
+.trainer-title{letter-spacing:1.5px;font-size:10px;}
+.trainer-bio{font-size:13px;}
+.trainer-cta{max-width:none;}
 .hero-main{grid-template-columns:1fr;gap:20px;}
 .hero-brand{gap:16px;margin-bottom:24px;}
 .hero{background-position:58% center;}
@@ -308,7 +309,7 @@ nav{padding:0 20px;}
     </div>
     <div class="trainers-grid">
       <div class="trainer-card">
-        <div class="trainer-img-wrap"><img class="trainer-img" src="alochen.jpg" alt="Alochen Rajaratnam" onerror="this.src='https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=600&q=80'"/></div>
+        <div class="trainer-img-wrap"><img class="trainer-img" style="transform:scale(1.3);transform-origin:center 8%;" src="alochen.jpg" alt="Alochen Rajaratnam" onerror="this.src='https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=600&q=80'"/></div>
         <div class="trainer-info">
           <div class="trainer-name">Alochen Rajaratnam</div>
           <div class="trainer-title">Founder & Head Coach</div>
