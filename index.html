@@ -4,8 +4,8 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>AR Fitness | #1 Personal Trainers Vancouver | In-Home & Studio Training</title>
-<meta name="description" content="Vancouver's premier personal training team. 1:1 training, 2:1 training and group classes in Downtown, Coal Harbour, Yaletown, West End, Financial District and Gastown. In-home, apartment and studio sessions. Book your free assessment today."/>
-<meta name="keywords" content="personal trainer Vancouver, personal training Vancouver, in-home personal trainer Vancouver, 1 on 1 personal training Vancouver, online personal trainer Canada, AR Fitness Vancouver, Alochen Rajaratnam, Ekko Bonder, body recomposition Vancouver, women's personal training Vancouver"/>
+<meta name="description" content="Vancouver personal training and lifestyle coaching for everyday people. 1:1 training, 2:1 training and group classes in Downtown, Coal Harbour, Yaletown, West End, Financial District and Gastown. In-home, apartment and studio sessions. Book your free assessment today."/>
+<meta name="keywords" content="personal trainer Vancouver, personal training Vancouver, in-home personal trainer Vancouver, 1 on 1 personal training Vancouver, online personal trainer Canada, AR Fitness Vancouver, Alochen Rajaratnam, Ekko Bonder, body recomposition Vancouver, women's personal training Vancouver, lifestyle coaching Vancouver"/>
 <meta property="og:title" content="AR Fitness | Vancouver's Premier Personal Training Team"/>
 <meta property="og:description" content="Elite personal training in-person and online. Real programs. Real results. Book your free assessment."/>
 <meta property="og:type" content="website"/>
@@ -68,7 +68,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-inner{max-width:1200px;width:100%;margin:0 auto;}
 .hero-brand{display:flex;align-items:center;gap:28px;margin-bottom:32px;}
 .hero-logo{width:clamp(110px,13vw,170px);height:auto;display:block;filter:drop-shadow(0 4px 24px rgba(0,0,0,.6));}
-.hero-wordmark{font-family:'Orbitron',sans-serif;font-size:clamp(30px,4.6vw,64px);font-weight:700;letter-spacing:.12em;line-height:1;}
+.hero-wordmark{font-family:'Orbitron',sans-serif;font-size:clamp(30px,4.6vw,64px);font-weight:700;letter-spacing:.06em;line-height:1;}
 .hero-eyebrow{font-family:'Orbitron',sans-serif;font-size:12px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--text-light);margin-top:14px;}
 .hero-main{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:end;}
 .hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(44px,5.6vw,80px);font-weight:900;line-height:.92;letter-spacing:-.5px;text-transform:uppercase;margin-bottom:0;}
@@ -222,7 +222,7 @@ nav{padding:0 20px;}
 <body>
 
 <nav>
-  <a href="#home" class="nav-logo"><img src="images/logo-sm.png" alt="AR Fitness logo"/><span>AR FITNESS</span></a>
+  <a href="#home" class="nav-logo"><img src="images/logo-sm.png" alt="AR Fitness logo"/><span>ARFITNESS</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
@@ -238,14 +238,14 @@ nav{padding:0 20px;}
   <div class="hero-brand">
     <img class="hero-logo" src="images/logo.png" alt="AR Fitness logo"/>
     <div>
-      <div class="hero-wordmark">AR FITNESS</div>
-      <div class="hero-eyebrow">Stronger. Every Session.</div>
+      <div class="hero-wordmark">ARFITNESS</div>
+      <div class="hero-eyebrow">Personal Training &amp; Lifestyle Coaching</div>
     </div>
   </div>
   <div class="hero-main">
-    <h1>Vancouver's <em>Premier</em><br/>Personal Training Team</h1>
+    <h1>Real Training<br/>for <em>Everyday</em> People.</h1>
     <div>
-      <p class="hero-sub">Elite personal training in-person across downtown Vancouver and online worldwide. Real programs. Real results. No templates.</p>
+      <p class="hero-sub">Personal training and lifestyle coaching for busy, everyday people. We help you build strength, energy and habits that fit around your work, family and life. In-person across downtown Vancouver and online worldwide.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Book Your Free Assessment</a>
         <a href="#trainers" class="btn-ghost">Meet Our Trainers</a>
@@ -324,7 +324,7 @@ nav{padding:0 20px;}
           <div class="trainer-name">Ekko Bonder</div>
           <div class="trainer-title">Senior Coach</div>
           <div class="trainer-bio">Ekko grew up in the equestrian world until early-onset arthritis at 15 pushed her to find new ways to stay strong. That journey led her to the gym, where she rebuilt her health and found her passion. She now specializes in body recomposition and women's health — helping others feel strong and confident, no matter their starting point.</div>
-          <div class="trainer-specs"><span class="trainer-spec">Women's Health</span><span class="trainer-spec">Body Recomp</span><span class="trainer-spec">Mobility</span></div>
+          <div class="trainer-specs"><span class="trainer-spec">Women's Health</span><span class="trainer-spec">Body Recomp</span><span class="trainer-spec">Mobility / Flexibility</span></div>
           <a href="#contact" class="trainer-cta">Book with Ekko</a>
         </div>
       </div>
@@ -434,14 +434,26 @@ nav{padding:0 20px;}
           <option value="" disabled selected>Training Type</option>
           <option>In-Person Training</option>
           <option>Online Coaching</option>
+          <option>Lifestyle Coaching</option>
           <option>Not Sure Yet</option>
+        </select>
+        <select class="form-input" name="how_did_you_find_us" required>
+          <option value="" disabled selected>Where did you find us? *</option>
+          <option>Google Search</option>
+          <option>Google Maps</option>
+          <option>Instagram</option>
+          <option>Facebook</option>
+          <option>TikTok</option>
+          <option>Friend or Family Referral</option>
+          <option>At Evolve Strength</option>
+          <option>Other</option>
         </select>
         <textarea class="form-input" name="message" placeholder="Tell us about your goals..."></textarea>
         <button type="submit" class="btn-primary" style="width:100%;padding:18px;text-align:center;display:block;border:none;cursor:pointer;">Send Message</button>
       </form>
     </div>
     <div>
-      <div class="contact-info-title">AR Fitness Vancouver</div>
+      <div class="contact-info-title">ARFITNESS Vancouver</div>
       <p style="font-size:14px;color:var(--text-mid);margin-bottom:32px;line-height:1.7;">Based at Evolve Strength — one of Vancouver's premier training facilities. We respond to all inquiries within 24 hours.</p>
       <div class="contact-detail"><div class="contact-detail-label">Address</div><div class="contact-detail-value">Evolve Strength, Downtown Vancouver, BC</div></div>
       <div class="contact-detail"><div class="contact-detail-label">Phone</div><div class="contact-detail-value">(778) 302-9995</div></div>
@@ -467,7 +479,7 @@ nav{padding:0 20px;}
   <div class="footer-inner">
     <div class="footer-top">
       <div>
-        <div class="footer-brand"><img src="images/logo-sm.png" alt=""/>AR FITNESS</div>
+        <div class="footer-brand"><img src="images/logo-sm.png" alt=""/>ARFITNESS</div>
         <p class="footer-desc">Vancouver's premier personal training team. In-person across the city. Online worldwide. Built around you.</p>
       </div>
       <div>
