@@ -23,7 +23,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-links a{font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);}
 .nav-links a:hover{color:var(--white);}
 .nav-cta{background:var(--orange);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:10px 24px;border:none;cursor:pointer;}
-.page-hero{padding:160px 48px 80px;background:linear-gradient(to right,rgba(10,10,10,0.95),rgba(10,10,10,0.7)),url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80') center/cover;}
+.page-hero{padding:160px 48px 80px;background:linear-gradient(to right,rgba(10,10,10,0.92) 35%,rgba(10,10,10,0.45)),url('images/hero.jpg') center 30%/cover no-repeat;}
 .eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--orange);margin-bottom:16px;}
 .page-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(48px,7vw,96px);font-weight:900;text-transform:uppercase;line-height:.9;margin-bottom:24px;}
 .page-title em{font-style:normal;color:var(--orange);}
@@ -115,6 +115,17 @@ footer{background:#050505;padding:60px 48px 32px;border-top:1px solid rgba(255,2
       <option>2:1 Personal Training</option>
       <option>Group Classes</option>
       <option>Not Sure Yet</option>
+    </select>
+    <select class="form-input" name="how_did_you_find_us" required>
+      <option value="" disabled selected>Where did you find us? *</option>
+      <option>Google Search</option>
+      <option>Google Maps</option>
+      <option>Instagram</option>
+      <option>Facebook</option>
+      <option>TikTok</option>
+      <option>Friend or Family Referral</option>
+      <option>At Evolve Strength</option>
+      <option>Other</option>
     </select>
     <textarea class="form-input" name="message" placeholder="Tell us about your goals..."></textarea>
     <button type="submit" class="btn-primary">Send Message</button>
