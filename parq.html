@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Health Questionnaire (PAR-Q+) | ARFITNESS</title>
+<meta name="robots" content="noindex"/>
+<link rel="icon" type="image/png" href="images/logo-sm.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@400;500;600;700&family=Orbitron:wght@600;700&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--ink:#0a0a0a;--paper:#f3f3f0;--card:#fff;--muted:#5d5d57;--line:#dcdcd5;--accent:#E8510A;}
+body{font-family:'Barlow',sans-serif;background:var(--paper);color:var(--ink);font-size:16px;line-height:1.5;}
+header{background:var(--ink);color:#fff;padding:18px 20px;}
+.hin{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:14px;}
+.hin img{height:46px;}
+.wm{font-family:'Orbitron',sans-serif;font-weight:700;letter-spacing:.06em;font-size:18px;}
+.tg{font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:.24em;color:#bbb;text-transform:uppercase;margin-top:3px;}
+main{max-width:760px;margin:0 auto;padding:28px 20px 60px;}
+h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(34px,7vw,52px);text-transform:uppercase;line-height:.95;}
+h1 em{font-style:normal;color:var(--accent);}
+.intro{color:var(--muted);margin:12px 0 24px;max-width:620px;}
+fieldset{border:0;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px;margin-bottom:16px;}
+legend{font-family:'Orbitron',sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);padding:0 6px;margin-left:-6px;}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.f{display:flex;flex-direction:column;gap:5px;min-width:0;}
+.f.wide{grid-column:1/-1;}
+label,.ql{font-weight:600;font-size:14px;}
+input[type=text],input[type=email],input[type=tel],input[type=date],textarea{width:100%;border:1px solid var(--line);border-radius:6px;padding:11px 12px;font:inherit;background:#fafaf8;}
+textarea{min-height:90px;resize:vertical;}
+input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px;}
+.q{padding:14px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:28px 1fr;gap:4px 10px;}
+.q:last-of-type{border-bottom:0;}
+.qn{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;color:var(--accent);line-height:1.1;}
+.qh{font-size:13px;color:var(--muted);}
+.yn{grid-column:2;display:flex;gap:8px;margin-top:6px;}
+.yn label{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:7px 16px;cursor:pointer;font-weight:600;}
+.yn input{accent-color:var(--accent);}
+.yn label:has(input:checked){border-color:var(--ink);background:var(--ink);color:#fff;}
+.note{background:#fff4ec;border-left:4px solid var(--accent);padding:12px 14px;border-radius:4px;font-size:14px;margin-top:12px;}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:14px;}
+.consent input{margin-top:4px;width:18px;height:18px;accent-color:var(--accent);flex-shrink:0;}
+button{width:100%;background:var(--accent);color:#fff;border:0;border-radius:6px;padding:16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:19px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;}
+button:disabled{opacity:.6;cursor:wait;}
+.err{color:#b42318;font-weight:600;margin-bottom:12px;}
+.done{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:28px;text-align:center;}
+.done h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:34px;text-transform:uppercase;}
+.small{font-size:12px;color:var(--muted);margin-top:18px;}
+.small a{color:inherit;}
+@media(max-width:600px){.grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<header><div class="hin"><img src="images/logo.png" alt="ARFITNESS logo"/><div><div class="wm">ARFITNESS</div><div class="tg">Personal Training &amp; Lifestyle Coaching</div></div></div></header>
+<main>
+  <div id="formWrap">
+  <h1>Health <em>Questionnaire</em></h1>
+  <p class="intro" id="hello">Before your first session, please answer these questions so your coach can plan training that's safe for you. It takes about 2 minutes. Your answers go only to your ARFITNESS coaches.</p>
+
+  <form id="parq" action="https://formspree.io/f/xqevyvoz" method="POST" novalidate>
+    <input type="hidden" name="_subject" id="subj" value="New PAR-Q submission"/>
+    <input type="hidden" name="form" value="PAR-Q"/>
+    <input type="hidden" name="client_ref" id="ref" value=""/>
+    <input type="hidden" name="parq_code" id="code" value=""/>
+
+    <fieldset>
+      <legend>About you</legend>
+      <div class="grid">
+        <div class="f"><label for="name">Full name</label><input type="text" id="name" name="name" autocomplete="name" required/></div>
+        <div class="f"><label for="dob">Date of birth</label><input type="date" id="dob" name="date_of_birth" required/></div>
+        <div class="f"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" autocomplete="tel" required/></div>
+        <div class="f"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required/></div>
+        <div class="f"><label for="emName">Emergency contact name</label><input type="text" id="emName" name="emergency_contact" required/></div>
+        <div class="f"><label for="emPhone">Emergency contact phone</label><input type="tel" id="emPhone" name="emergency_phone" required/></div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>General health questions</legend>
+      <p class="qh">Please answer YES or NO to each question.</p>
+      <div id="questions"></div>
+      <div class="f wide" style="margin-top:10px"><label for="details">If you answered YES to any question, please give details</label><textarea id="details" name="yes_details" placeholder="e.g. which condition, when it was diagnosed, medications, what your doctor has said"></textarea></div>
+      <div class="f wide" style="margin-top:12px"><label for="other">Anything else your coach should know?</label><textarea id="other" name="other_notes" placeholder="Past injuries or surgeries, pregnancy or recent birth, current pain, anything you'd like us to keep in mind"></textarea></div>
+      <div class="note" id="yesNote" hidden>Thanks for letting us know. Your coach will review your answers with you before your first session, and may ask you to check with your doctor before starting.</div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Sign off</legend>
+      <div class="grid">
+        <div class="f"><label for="sig">Type your full name as your signature</label><input type="text" id="sig" name="signature" required/></div>
+        <div class="f"><label for="sigDate">Date</label><input type="date" id="sigDate" name="signed_date" required/></div>
+        <div class="f wide"><label class="consent"><input type="checkbox" id="consent" name="consent" value="Yes" required/><span>I confirm my answers are accurate to the best of my knowledge. I will tell my coach if my health changes. I consent to ARFITNESS securely storing this information for my coaching, and I can ask for it to be deleted at any time.</span></label></div>
+      </div>
+    </fieldset>
+
+    <p class="err" id="err" hidden></p>
+    <button type="submit" id="send">Submit questionnaire</button>
+    <p class="small">Questions based on the PAR-Q+ general health questions (PAR-Q+ Collaboration). Questions? Call or text (778) 302-9995 or email alochen@arfitness.ca.</p>
+  </form>
+  </div>
+
+  <div class="done" id="done" hidden>
+    <h2>Thank you!</h2>
+    <p>Your questionnaire has been sent to your ARFITNESS coach. See you at your first session.</p>
+    <p class="small"><a href="index.html">Back to arfitness.ca</a></p>
+  </div>
+</main>
+<script>
+(function(){
+  var Q=[
+    "Has your doctor ever said that you have a heart condition OR high blood pressure?",
+    "Do you feel pain in your chest at rest, during your daily activities, OR when you do physical activity?",
+    "Do you lose balance because of dizziness OR have you lost consciousness in the last 12 months? (Answer NO if your dizziness was caused by over-breathing, including during hard exercise.)",
+    "Have you ever been diagnosed with another chronic medical condition (other than heart disease or high blood pressure)?",
+    "Are you currently taking prescribed medications for a chronic medical condition?",
+    "Do you currently have (or have you had in the past 12 months) a bone, joint or soft tissue (muscle, ligament or tendon) problem that could be made worse by becoming more physically active?",
+    "Has your doctor ever said that you should only do medically supervised physical activity?"
+  ];
+  var box=document.getElementById('questions');
+  Q.forEach(function(t,i){
+    var n=i+1,d=document.createElement('div');d.className='q';
+    d.innerHTML='<span class="qn">'+n+'</span><span class="ql" id="ql'+n+'"></span>'+
+      '<div class="yn" role="radiogroup" aria-labelledby="ql'+n+'"><label><input type="radio" name="q'+n+'" value="No" required/> No</label><label><input type="radio" name="q'+n+'" value="Yes"/> Yes</label></div>';
+    d.querySelector('.ql').textContent=t;box.appendChild(d);
+  });
+  var p=new URLSearchParams(location.search),nm=(p.get('name')||'').slice(0,80),ref=(p.get('ref')||'').replace(/[^A-Za-z0-9_\-]/g,'').slice(0,60);
+  if(nm){document.getElementById('name').value=nm;document.getElementById('hello').textContent='Hi '+nm.split(' ')[0]+'! Before your first session, please answer these questions so your coach can plan training that\'s safe for you. It takes about 2 minutes. Your answers go only to your ARFITNESS coaches.';}
+  document.getElementById('ref').value=ref;
+  var t=new Date();document.getElementById('sigDate').value=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
+  var form=document.getElementById('parq');
+  form.addEventListener('change',function(){document.getElementById('yesNote').hidden=!form.querySelector('.yn input[value=Yes]:checked');});
+  function v(id){return document.getElementById(id).value.trim();}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var err=document.getElementById('err');err.hidden=true;
+    var missing=[];
+    ['name','dob','phone','email','emName','emPhone','sig','sigDate'].forEach(function(id){if(!v(id))missing.push(id);});
+    var ans=Q.map(function(_,i){var c=form.querySelector('input[name=q'+(i+1)+']:checked');return c?c.value:'';});
+    if(missing.length||ans.indexOf('')>-1||!document.getElementById('consent').checked){
+      err.textContent='Please fill in every field, answer all 7 questions, and tick the consent box.';err.hidden=false;
+      var first=missing.length?document.getElementById(missing[0]):(ans.indexOf('')>-1?form.querySelector('input[name=q'+(ans.indexOf('')+1)+']'):document.getElementById('consent'));
+      if(first){first.focus();first.scrollIntoView({block:'center'});}return;
+    }
+    var data={v:1,ref:ref,name:v('name'),dob:v('dob'),phone:v('phone'),email:v('email'),emName:v('emName'),emPhone:v('emPhone'),
+      a:ans.map(function(x){return x==='Yes'?'Y':'N';}).join(''),details:v('details'),other:v('other'),sig:v('sig'),date:v('sigDate'),at:new Date().toISOString()};
+    var b64=btoa(unescape(encodeURIComponent(JSON.stringify(data)))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+    document.getElementById('code').value='ARFQ1.'+b64+'.END';
+    var yes=ans.filter(function(x){return x==='Yes';}).length;
+    document.getElementById('subj').value='PAR-Q: '+data.name+(yes?' ('+yes+' YES)':' (all no)');
+    var btn=document.getElementById('send');btn.disabled=true;btn.textContent='Sending…';
+    fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+      .then(function(r){if(!r.ok)throw new Error();document.getElementById('formWrap').hidden=true;document.getElementById('done').hidden=false;window.scrollTo(0,0);})
+      .catch(function(){btn.disabled=false;btn.textContent='Submit questionnaire';err.textContent='That didn\'t send. Check your connection and try again, or text us at (778) 302-9995.';err.hidden=false;});
+  });
+})();
+</script>
+</body>
+</html>
