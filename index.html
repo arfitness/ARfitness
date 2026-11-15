@@ -225,7 +225,44 @@ section:not(.hero){background:var(--paper);color:var(--ink);--text-mid:#555;--te
 .carousel-dots{display:flex;gap:10px;}
 .carousel-dot{width:10px;height:10px;border-radius:50%;border:none;padding:0;background:rgba(0,0,0,.2);cursor:pointer;}
 .carousel-dot[aria-current="true"]{background:var(--accent);}
+.pricing{background:var(--paper-2)!important;}
+.pricing-inner{max-width:1200px;margin:0 auto;}
+.pricing-header{margin-bottom:48px;}
+.pricing-intro{margin-top:16px;font-size:15px;color:var(--text-mid);max-width:520px;line-height:1.7;}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;}
+.price-panel{padding:48px 44px;display:flex;flex-direction:column;}
+.price-light{background:#fff;color:var(--ink);--line:rgba(0,0,0,.14);--muted:#555;--sel-bg:#0d0d0d;--sel-fg:#fff;}
+.price-dark{background:#0d0d0d;color:#fff;--line:rgba(255,255,255,.18);--muted:#a0a0a0;--sel-bg:#fff;--sel-fg:#0d0d0d;}
+.price-kicker{font-family:'Orbitron',sans-serif;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+.price-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(34px,3.6vw,48px);font-weight:900;text-transform:uppercase;line-height:1;margin-bottom:24px;}
+.price-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin:8px 0 28px;}
+.price-list li{position:relative;padding-left:24px;font-size:15px;line-height:1.5;}
+.price-list li::before{content:"";position:absolute;left:2px;top:7px;width:8px;height:8px;background:var(--accent);transform:rotate(45deg);}
+.price-q{display:flex;align-items:center;gap:14px;font-family:'Orbitron',sans-serif;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin:6px 0 14px;}
+.price-q::before{content:"";width:28px;height:2px;background:var(--accent);}
+.price-toggle{display:grid;gap:8px;margin-bottom:24px;}
+.price-toggle.cols-2{grid-template-columns:repeat(2,1fr);}
+.price-toggle.cols-3{grid-template-columns:repeat(3,1fr);}
+.price-toggle.cols-4{grid-template-columns:repeat(4,1fr);}
+.price-toggle button{background:transparent;color:inherit;border:1px solid var(--line);font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;padding:14px 8px;cursor:pointer;transition:all .2s;}
+.price-toggle button:hover{border-color:currentColor;}
+.price-toggle button.active{background:var(--sel-bg);color:var(--sel-fg);border-color:var(--sel-bg);}
+.price-figure{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 14px;margin-top:4px;}
+.price-big{font-family:'Barlow Condensed',sans-serif;font-size:clamp(72px,8vw,112px);font-weight:900;line-height:.9;letter-spacing:-1px;}
+.price-unit{font-size:17px;color:var(--muted);}
+.price-detail{font-size:15px;color:var(--muted);margin-top:10px;}
+.price-note{font-size:13px;color:var(--muted);margin-top:6px;}
+.price-save-row{display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px;margin:16px 0 20px;}
+.price-save-row[hidden]{display:none;}
+.price-save{background:var(--accent);color:#fff;font-weight:700;font-size:14px;padding:6px 12px;}
+.price-compare{font-size:14px;color:var(--muted);}
+.price-cta{margin-top:auto;display:block;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:16px;background:var(--sel-bg);color:var(--sel-fg);transition:opacity .2s;}
+.price-light .price-cta{margin-top:28px;}
+.price-cta:hover{opacity:.85;}
 @media(max-width:768px){
+.pricing-grid{grid-template-columns:1fr;}
+.price-panel{padding:32px 22px;}
+.price-toggle.cols-4{grid-template-columns:repeat(2,1fr);}
 .carousel-track .testimonial-card{padding:32px 24px;}
 .carousel-track .testimonial-text{font-size:15px;}
 .contact-panel{padding:28px 22px;}
@@ -266,7 +303,7 @@ nav{padding:0 20px;}
   <a href="#home" class="nav-logo"><img src="images/logo-sm.png" alt="AR Fitness logo"/><span>ARFITNESS</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
     <li><a href="#trainers">Trainers</a></li>
     <li><a href="#locations">Locations</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -321,22 +358,63 @@ nav{padding:0 20px;}
   </div>
 </section>
 
-<section class="services" id="services">
-  <div class="services-inner">
-    <div class="services-header">
-      <div>
-        <div class="section-eyebrow">What We Offer</div>
-        <h2 class="section-title">Training<br/><em>Designed</em><br/>to Deliver.</h2>
-      </div>
-      <a href="#contact" class="btn-ghost">Book a Session</a>
+<section class="pricing" id="pricing">
+  <div class="pricing-inner">
+    <div class="pricing-header">
+      <div class="section-eyebrow">Pricing</div>
+      <h2 class="section-title">Coaching That<br/><em>Fits</em> Your Life.</h2>
+      <p class="pricing-intro">Train with us in person in Vancouver or online from anywhere. Pick the option that suits your schedule.</p>
     </div>
-    <div class="services-grid">
-      <div class="service-card"><div class="service-num">01</div><div class="service-name">In-Person Training</div><div class="service-desc">One-on-one coaching at Evolve Strength. Real-time feedback, expert form correction, and a program that evolves as you do.</div></div>
-      <div class="service-card"><div class="service-num">02</div><div class="service-name">Online Coaching</div><div class="service-desc">Full programming, check-ins, and accountability — train anywhere, on your schedule.</div></div>
-      <div class="service-card"><div class="service-num">03</div><div class="service-name">Body Recomposition</div><div class="service-desc">Lose fat and build muscle simultaneously with our science-backed approach to sustainable body change.</div></div>
-      <div class="service-card"><div class="service-num">04</div><div class="service-name">Strength & Muscle</div><div class="service-desc">Progressive overload programming built for real strength gains. Structured, intentional, designed to perform for decades.</div></div>
-      <div class="service-card"><div class="service-num">05</div><div class="service-name">Mobility & Recovery</div><div class="service-desc">We build mobility and corrective exercise into every program to keep you training injury-free long-term.</div></div>
-      <div class="service-card"><div class="service-num">06</div><div class="service-name">Women's Health & Fitness</div><div class="service-desc">Specialized programming for women's health, body recomposition, and building confidence — at every starting point.</div></div>
+    <div class="pricing-grid">
+
+      <div class="price-panel price-light" id="inPerson">
+        <div class="price-kicker">01 · In person, Vancouver</div>
+        <h3 class="price-title">Personal Training</h3>
+        <ul class="price-list">
+          <li>One-to-one sessions at Evolve Strength or in your home or building</li>
+          <li>A custom program built around your goals and your level</li>
+          <li>Hands-on coaching for technique, form and progress</li>
+          <li>Nutrition and lifestyle guidance between sessions</li>
+        </ul>
+        <div class="price-q">How do you want to pay?</div>
+        <div class="price-toggle cols-2" data-group="ip-plan">
+          <button type="button" class="active" data-plan="monthly">Month to month</button>
+          <button type="button" data-plan="pif">Pay in full</button>
+        </div>
+        <div class="price-q" id="ipOptLabel">How often do you want to train?</div>
+        <div class="price-toggle cols-3" data-group="ip-opt" id="ipOpts">
+          <button type="button" data-i="0">1x / week</button>
+          <button type="button" class="active" data-i="1">2x / week</button>
+          <button type="button" data-i="2">3x / week</button>
+        </div>
+        <div class="price-figure"><span class="price-big" id="ipBig">$90</span><span class="price-unit" id="ipUnit">CAD per session</span></div>
+        <div class="price-detail" id="ipDetail">8 sessions a month · $720 CAD monthly</div>
+        <div class="price-note" id="ipNote">No commitment. Cancel anytime with 30 days' notice.</div>
+        <a href="#contact" class="price-cta">Book Your Free Assessment</a>
+      </div>
+
+      <div class="price-panel price-dark" id="online">
+        <div class="price-kicker">02 · Online, anywhere</div>
+        <h3 class="price-title">Online Coaching</h3>
+        <div class="price-toggle cols-4" data-group="ol">
+          <button type="button" data-i="0">Monthly</button>
+          <button type="button" data-i="1">3 months</button>
+          <button type="button" data-i="2">6 months</button>
+          <button type="button" class="active" data-i="3">12 months</button>
+        </div>
+        <div class="price-figure"><span class="price-big" id="olBig">$150</span><span class="price-unit">CAD per month</span></div>
+        <div class="price-detail" id="olDetail">$1,800 CAD paid upfront for 12 months</div>
+        <div class="price-save-row" id="olSaveRow"><span class="price-save" id="olSave">Save $1,800</span><span class="price-compare" id="olCompare">vs. paying monthly for 12 months ($3,600)</span></div>
+        <ul class="price-list">
+          <li>Direct access to your coaches</li>
+          <li>Custom programming built for you</li>
+          <li>Nutrition guidance and accountability</li>
+          <li>Weekly check-ins</li>
+          <li>24/7 support</li>
+        </ul>
+        <a href="#contact" class="price-cta">Start Online Coaching</a>
+      </div>
+
     </div>
   </div>
 </section>
@@ -589,6 +667,42 @@ nav{padding:0 20px;}
   document.getElementById('reviewNext').onclick=function(){go(current()+1)};
   track.addEventListener('scroll',function(){clearTimeout(track._t);track._t=setTimeout(function(){idx=Math.round(track.scrollLeft/track.clientWidth);sync();},120);});
   sync();
+})();
+</script>
+<script>
+(function(){
+  function money(n){return '$'+n.toLocaleString('en-US');}
+  function bind(group,cb){var g=document.querySelector('[data-group="'+group+'"]');if(!g)return;
+    g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+      [].forEach.call(g.children,function(x){x.classList.toggle('active',x===b);});cb(b);});}
+  // In-person
+  var IP={monthly:[{label:'1x / week',per:100,n:4},{label:'2x / week',per:90,n:8},{label:'3x / week',per:85,n:12}],
+          pif:[{label:'12 sessions',total:960,n:12,note:'Use over 3 months.'},{label:'24 sessions',total:1800,n:24,note:'Use over 6 months.'},{label:'48 sessions',total:3360,n:48,note:'Train 2x a week for 6 months, or 1x a week for a year.'}]};
+  var plan='monthly',opt=1,opts=document.getElementById('ipOpts');
+  function renderIP(){var o=IP[plan][opt];
+    if(plan==='monthly'){
+      document.getElementById('ipBig').textContent=money(o.per);
+      document.getElementById('ipUnit').textContent='CAD per session';
+      document.getElementById('ipDetail').textContent=o.n+' sessions a month · '+money(o.per*o.n)+' CAD monthly';
+      document.getElementById('ipNote').textContent="No commitment. Cancel anytime with 30 days' notice.";
+    }else{
+      document.getElementById('ipBig').textContent=money(o.total);
+      document.getElementById('ipUnit').textContent='CAD paid in full';
+      document.getElementById('ipDetail').textContent=o.n+' sessions · '+money(Math.round(o.total/o.n))+' CAD per session';
+      document.getElementById('ipNote').textContent=o.note;
+    }}
+  function renderIPOpts(){document.getElementById('ipOptLabel').textContent=plan==='monthly'?'How often do you want to train?':'Choose your package';
+    [].forEach.call(opts.children,function(b,i){b.textContent=IP[plan][i].label;b.classList.toggle('active',i===opt);});}
+  bind('ip-plan',function(b){plan=b.dataset.plan;opt=plan==='monthly'?1:0;renderIPOpts();renderIP();});
+  bind('ip-opt',function(b){opt=+b.dataset.i;renderIP();});
+  // Online
+  var OL=[{m:1,per:300},{m:3,per:250},{m:6,per:200},{m:12,per:150}];
+  bind('ol',function(b){var o=OL[+b.dataset.i],full=300*o.m,tot=o.per*o.m,row=document.getElementById('olSaveRow');
+    document.getElementById('olBig').textContent=money(o.per);
+    if(o.m===1){document.getElementById('olDetail').textContent='Billed monthly. No long-term commitment.';row.hidden=true;}
+    else{document.getElementById('olDetail').textContent=money(tot)+' CAD paid upfront for '+o.m+' months';row.hidden=false;
+      document.getElementById('olSave').textContent='Save '+money(full-tot);
+      document.getElementById('olCompare').textContent='vs. paying monthly for '+o.m+' months ('+money(full)+')';}});
 })();
 </script>
 </body>
