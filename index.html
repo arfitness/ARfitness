@@ -260,8 +260,28 @@ section:not(.hero){background:var(--paper);color:var(--ink);--text-mid:#555;--te
 .plan-cta:hover{background:var(--ink);color:#fff;border-color:var(--ink);}
 .plan-featured .plan-cta{background:var(--accent);border-color:var(--accent);color:#fff;}
 .plan-featured .plan-cta:hover{opacity:.9;}
+.plan-mobile-cta{display:none;}
 @media(max-width:768px){
 .plan-cards.cols-3,.plan-cards.cols-4{grid-template-columns:1fr;}
+.pricing-intro{font-size:14px;}
+.pricing-top{margin-bottom:24px;gap:20px;}
+.plan-includes{font-size:12px;padding:12px 14px;gap:6px 14px;margin-bottom:24px;}
+.plan-includes-title{width:100%;}
+.plan-group{margin-bottom:24px;}
+.plan-group-head{gap:4px 12px;margin-bottom:10px;}
+.plan-group-head h3{font-size:22px;}
+.plan-group-head p{font-size:12px;}
+.plan-cards.cols-3,.plan-cards.cols-4{gap:8px;}
+.plan{display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:12px;padding:14px 16px;}
+.plan:hover{transform:none;}
+.plan-label{grid-column:1;grid-row:1;font-size:10px;letter-spacing:1.5px;}
+.plan-lines{grid-column:1;grid-row:2;border-top:none;padding-top:4px;margin:0;gap:2px;font-size:12.5px;color:inherit;opacity:.8;}
+.plan-price{grid-column:2;grid-row:1 / span 2;margin:0;font-size:34px;text-align:right;}
+.plan-price span{display:block;margin:2px 0 0;font-size:11px;}
+.plan-badge{top:-9px;left:16px;font-size:9px;padding:3px 8px;}
+.plan-featured{margin-top:6px;}
+.plan-cta{display:none;}
+.plan-mobile-cta{display:block;margin-top:16px;text-align:center;background:var(--accent);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:16px;}
 .pricing-switch{width:100%;}
 .pricing-switch button{flex:1;padding:12px 10px;font-size:13px;}
 .plan-includes{padding:16px;gap:8px 16px;}
@@ -422,6 +442,7 @@ nav{padding:0 20px;}
           </div>
         </div>
       </div>
+      <a href="#contact" class="plan-mobile-cta">Book Your Free Assessment</a>
     </div>
 
     <div class="plan-view" id="planOnline" role="tabpanel">
@@ -455,6 +476,7 @@ nav{padding:0 20px;}
           </div>
         </div>
       </div>
+      <a href="#contact" class="plan-mobile-cta">Start Online Coaching</a>
     </div>
   </div>
 </section>
