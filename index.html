@@ -266,8 +266,8 @@ section:not(.hero){background:var(--paper);color:var(--ink);--text-mid:#555;--te
 :root{--paper:#0a0a0a;--paper-2:#111111;}
 body{background:#0a0a0a;}
 section:not(.hero){background:#0a0a0a;color:#fff;--text-mid:#8c8c8c;--text-light:#c8c8c8;}
-.pricing,.locations,.process{background:#111111!important;}
-.testimonials,.contact{background:#0a0a0a!important;}
+.trainers,.locations,.process{background:#111111!important;}
+.pricing,.testimonials,.contact{background:#0a0a0a!important;}
 .pillar,.service-card,.trainer-card,.location-pill,.testimonial-card,.process-step,.contact-panel{background:#171717;color:#fff;border:1px solid rgba(255,255,255,.07);--text-mid:#8c8c8c;--text-light:#c8c8c8;}
 .trainer-card{border-top:3px solid var(--accent);}
 .location-pill:hover{background:#1f1f1f;border-color:rgba(255,255,255,.2);}
@@ -354,8 +354,8 @@ nav{padding:0 20px;}
   <a href="#home" class="nav-logo"><img src="images/logo-sm.png" alt="AR Fitness logo"/><span>ARFITNESS</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#pricing">Pricing</a></li>
     <li><a href="#trainers">Trainers</a></li>
+    <li><a href="#pricing">Pricing</a></li>
     <li><a href="#locations">Locations</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -404,6 +404,38 @@ nav{padding:0 20px;}
         <div class="pillar"><div class="pillar-title">Built for Your Biology</div><div class="pillar-text">No templates. Every program is precision-engineered for your unique body and lifestyle.</div></div>
         <div class="pillar"><div class="pillar-title">Strength Without Pain</div><div class="pillar-text">We raise your physical ceiling while identifying and reducing chronic movement pain.</div></div>
         <div class="pillar"><div class="pillar-title">365 Accountability</div><div class="pillar-text">Daily guidance and a dedicated app mean you're never left to figure it out alone.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trainers" id="trainers">
+  <div class="trainers-inner">
+    <div class="trainers-header">
+      <div class="section-eyebrow">The Team</div>
+      <h2 class="section-title">Meet Your<br/><em>Coaches.</em></h2>
+      <p style="margin-top:16px;font-size:15px;color:var(--text-mid);max-width:520px;line-height:1.7;">Two coaches. Two perspectives. One shared commitment to your long-term results.</p>
+    </div>
+    <div class="trainers-grid">
+      <div class="trainer-card">
+        <div class="trainer-img-wrap"><img class="trainer-img" style="transform:scale(1.3);transform-origin:center 8%;" src="alochen.jpg" alt="Alochen Rajaratnam" onerror="this.src='https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=600&q=80'"/></div>
+        <div class="trainer-info">
+          <div class="trainer-name">Alochen Rajaratnam</div>
+          <div class="trainer-title">Founder & Head Coach</div>
+          <div class="trainer-bio">Growing up in Canada to Sri Lankan immigrant parents, Alochen knows what it means to work hard for change. Once an overweight kid, he transformed his life through discipline and consistency — and today channels that same drive into helping others rewrite their own stories.</div>
+          <div class="trainer-specs"><span class="trainer-spec">Body Recomp</span><span class="trainer-spec">Strength</span><span class="trainer-spec">Longevity</span></div>
+          <a href="#contact" class="trainer-cta">Book with Alochen</a>
+        </div>
+      </div>
+      <div class="trainer-card">
+        <div class="trainer-img-wrap"><img class="trainer-img" style="object-position:center 12%;" src="ekko.jpg" alt="Ekko Bonder" onerror="this.src='https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80'"/></div>
+        <div class="trainer-info">
+          <div class="trainer-name">Ekko Bonder</div>
+          <div class="trainer-title">Senior Coach</div>
+          <div class="trainer-bio">Ekko grew up in the equestrian world until early-onset arthritis at 15 pushed her to find new ways to stay strong. That journey led her to the gym, where she rebuilt her health and found her passion. She now specializes in body recomposition and women's health — helping others feel strong and confident, no matter their starting point.</div>
+          <div class="trainer-specs"><span class="trainer-spec">Women's Health</span><span class="trainer-spec">Body Recomp</span><span class="trainer-spec">Mobility / Flexibility</span></div>
+          <a href="#contact" class="trainer-cta">Book with Ekko</a>
+        </div>
       </div>
     </div>
   </div>
@@ -508,38 +540,6 @@ nav{padding:0 20px;}
       <a href="#contact" class="plan-mobile-cta">Start Online Coaching</a>
     </div>
     <p class="pricing-fine">All prices are in Canadian dollars (CAD) and do not include GST.</p>
-  </div>
-</section>
-
-<section class="trainers" id="trainers">
-  <div class="trainers-inner">
-    <div class="trainers-header">
-      <div class="section-eyebrow">The Team</div>
-      <h2 class="section-title">Meet Your<br/><em>Coaches.</em></h2>
-      <p style="margin-top:16px;font-size:15px;color:var(--text-mid);max-width:520px;line-height:1.7;">Two coaches. Two perspectives. One shared commitment to your long-term results.</p>
-    </div>
-    <div class="trainers-grid">
-      <div class="trainer-card">
-        <div class="trainer-img-wrap"><img class="trainer-img" style="transform:scale(1.3);transform-origin:center 8%;" src="alochen.jpg" alt="Alochen Rajaratnam" onerror="this.src='https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=600&q=80'"/></div>
-        <div class="trainer-info">
-          <div class="trainer-name">Alochen Rajaratnam</div>
-          <div class="trainer-title">Founder & Head Coach</div>
-          <div class="trainer-bio">Growing up in Canada to Sri Lankan immigrant parents, Alochen knows what it means to work hard for change. Once an overweight kid, he transformed his life through discipline and consistency — and today channels that same drive into helping others rewrite their own stories.</div>
-          <div class="trainer-specs"><span class="trainer-spec">Body Recomp</span><span class="trainer-spec">Strength</span><span class="trainer-spec">Longevity</span></div>
-          <a href="#contact" class="trainer-cta">Book with Alochen</a>
-        </div>
-      </div>
-      <div class="trainer-card">
-        <div class="trainer-img-wrap"><img class="trainer-img" style="object-position:center 12%;" src="ekko.jpg" alt="Ekko Bonder" onerror="this.src='https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80'"/></div>
-        <div class="trainer-info">
-          <div class="trainer-name">Ekko Bonder</div>
-          <div class="trainer-title">Senior Coach</div>
-          <div class="trainer-bio">Ekko grew up in the equestrian world until early-onset arthritis at 15 pushed her to find new ways to stay strong. That journey led her to the gym, where she rebuilt her health and found her passion. She now specializes in body recomposition and women's health — helping others feel strong and confident, no matter their starting point.</div>
-          <div class="trainer-specs"><span class="trainer-spec">Women's Health</span><span class="trainer-spec">Body Recomp</span><span class="trainer-spec">Mobility / Flexibility</span></div>
-          <a href="#contact" class="trainer-cta">Book with Ekko</a>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
