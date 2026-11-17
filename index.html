@@ -262,6 +262,34 @@ section:not(.hero){background:var(--paper);color:var(--ink);--text-mid:#555;--te
 .plan-featured .plan-cta:hover{opacity:.9;}
 .plan-mobile-cta{display:none;}
 .pricing-fine{margin-top:24px;font-size:13px;color:var(--text-mid);}
+/* ---- Dark theme (owner's choice): restores the all-dark look over the light rules above ---- */
+:root{--paper:#0a0a0a;--paper-2:#111111;}
+body{background:#0a0a0a;}
+section:not(.hero){background:#0a0a0a;color:#fff;--text-mid:#8c8c8c;--text-light:#c8c8c8;}
+.pricing,.locations,.process{background:#111111!important;}
+.testimonials,.contact{background:#0a0a0a!important;}
+.pillar,.service-card,.trainer-card,.location-pill,.testimonial-card,.process-step,.contact-panel{background:#171717;color:#fff;border:1px solid rgba(255,255,255,.07);--text-mid:#8c8c8c;--text-light:#c8c8c8;}
+.trainer-card{border-top:3px solid var(--accent);}
+.location-pill:hover{background:#1f1f1f;border-color:rgba(255,255,255,.2);}
+.online-badge{color:#fff;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2);}
+.contact .form-input{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);color:#fff;}
+.contact .form-input::placeholder{color:#888;}
+.contact .form-input:focus{border-color:#fff;}
+.contact select.form-input option{background:#0a0a0a;color:#fff;}
+.contact .btn-primary{background:#fff;color:#0a0a0a;}
+.contact .btn-primary:hover{background:#d6d6d6;}
+.carousel-btn{background:#fff;color:#0a0a0a;}
+.carousel-btn:hover{background:var(--accent);color:#fff;}
+.carousel-dot{background:rgba(255,255,255,.25);}
+.pricing-switch{background:#1f1f1f;}
+.plan-includes{border-color:rgba(255,255,255,.2);}
+.plan{background:#181818;color:#fff;border:1px solid rgba(255,255,255,.08);box-shadow:none;}
+.plan:hover{box-shadow:0 10px 30px rgba(0,0,0,.5);}
+.plan-label,.plan-price span{color:#9a9a9a;}
+.plan-lines{border-top-color:rgba(255,255,255,.12);}
+.plan-cta:hover{background:#fff;color:#0a0a0a;border-color:#fff;}
+.plan-featured{background:#0a0a0a;border:1px solid var(--accent);}
+.plan-featured .plan-label,.plan-featured .plan-price span{color:#aaa;}
 @media(max-width:768px){
 .plan-cards.cols-3,.plan-cards.cols-4{grid-template-columns:1fr;}
 .pricing-intro{font-size:14px;}
